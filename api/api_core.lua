@@ -1,46 +1,28 @@
 ---@meta Core
 
----@class RegisteredDefinitions
----@field terrain_materials TerrainMaterialDef[] Table of tables with identifier as a key and definition table as a value
----@field game_objects GameObjectDef[] Table of tables with identifier as a key and definition table as a value
----@field game_items ItemDef[] Table of tables with identifier as a key and definition table as a value
----@field game_biomes BiomeDef[] Table of tables with identifier as a key and definition table as a value
----@field stars StarDef[] Table of tables with identifier as a key and definition table as a value
----@field planets PlanetDef[] Table of tables with identifier as a key and definition table as a value
----@field game_entities GameEntityDef[] Table of tables with identifier as a key and definition table as a value
-
 ---Main game class
 ---@class Core
----@field registered_definitions RegisteredDefinitions
+---@field registered_definitions table A table of different categories for registered object definitions
 Core = {}
+
+---@type GameObjectDef[] Table of tables with identifier as a key and definition table as a value
+Core.registered_definitions.game_objects = {}
+
+---@type ItemDef[] Table of tables with identifier as a key and definition table as a value
+Core.registered_definitions.game_items = {}
+
+---@type BiomeDef[] Table of tables with identifier as a key and definition table as a value
+Core.registered_definitions.game_biomes = {}
+
+---@type StarDef[] Table of tables with identifier as a key and definition table as a value
+Core.registered_definitions.stars = {}
+
+---@type PlanetDef[] Table of tables with identifier as a key and definition table as a value
+Core.registered_definitions.planets = {}
 
 ---Loads a new script using its identifier.
 ---@param identifier string
 Core.load_script = function (identifier) end
-
----@class RandomSoundsDef Randomized sound definition table
----@field random_pitch? number Random pitch offset, optional. Default is 0.0
----@field random_volume? number Random volume offset in db, optional. Default is 0.0
----@field sounds string[] Array of sound identifiers
-
----@class TerrainDecorationDef Terrain material decoration definition table
----@field mesh string Mesh identifier
----@field impostor_type? "side"|"top" Impostor type, optional. Default is side
----@field density? number Decoration density, optional. Default is 1.0
----@field scale? FloatFunction Decoration scale, optional. Default is 1.0
----@field color? string Decoaration color that will be used instead of terrain color, optional
-
----@class TerrainMaterialDef Terrain material definition table
----@field color string|{ dark_color: string, bright_color: string, color_mixer: number|FloatFunction } Terrain color, in Hex RGBA format
----@field smooth_blending? boolean Smooth blending, will mix material color with neighbours that have smooth blending, optional. Default is false
----@field decorations? TerrainDecorationDef[] Array of terrain decoration definitions
----@field sounds? {footstep?: RandomSoundsDef} Table with sound definitions
-
----Register new Terrain Material with specidied identifier and definition.
----@param identifier string Object identifier
----@param def_table TerrainMaterialDef
----@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
-Core.register_terrain_material = function (identifier, def_table, override_object) end
 
 ---@class MeshDef View range definition table
 ---@field name string Mesh name
@@ -48,7 +30,7 @@ Core.register_terrain_material = function (identifier, def_table, override_objec
 
 ---@class Collider Collider definition table
 ---@field type "mesh"|"sphere"|"cube" Type of collider
----@field mesh? string Mesh identifier for mesh collider, optional
+---@field mesh? string Mesh identifier for mesh collider, optional. Will be transformed to path "<namespace>/meshes/<path>.bmesh"
 ---@field radius? number Spherical collider radius, optional
 ---@field size? Vector3 Cube collider size, optional
 ---@field position? Vector3 Collider position relative to object center, optional
@@ -60,12 +42,6 @@ Core.register_terrain_material = function (identifier, def_table, override_objec
 ---@class ItemDef
 ---@field mesh? string Item mesh, optional
 ---@field view_mode? "side"|"top" Icon view mode, optional. Default is "side"
-
----Register new Game Object with specidied identifier and definition.
----@param identifier string Object identifier
----@param def_table GameObjectDef
----@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
-Core.register_game_object = function (identifier, def_table, override_object) end
 
 ---Register new Item with specidied identifier and definition.
 ---@param identifier string Item identifier
@@ -154,12 +130,6 @@ Core.register_star = function (identifier, def_table, override_object) end
 ---@param def_table PlanetDef
 ---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 Core.register_planet = function (identifier, def_table, override_object) end
-
----Register GameEntity with specidied identifier and definition.
----@param identifier string GameEntity identifier
----@param def_table GameEntityDef GameEntity definition
----@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
-Core.register_game_entity = function (identifier, def_table, override_object) end
 
 ---Packs color values into string in RGBA format
 ---@param r integer Red color value, [0 - 255]

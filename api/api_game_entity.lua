@@ -19,6 +19,12 @@
 ---@field on_tick? fun(game_entity: GameEntity, delta: number) On-tick function, optional
 ---@field on_player_collision? fun(game_entity: GameEntity, player: Player) Function called when entity collides with player, optional
 
+---Register GameEntity with specidied identifier and definition.
+---@param identifier string GameEntity identifier
+---@param def_table GameEntityDef GameEntity definition
+---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
+Core.register_game_entity = function (identifier, def_table, override_object) end
+
 ---@class GameEntity
 ---@field position Vector3
 ---@field rotation Vector3
@@ -31,3 +37,6 @@ GameEntity = {}
 
 ---Deletes this GameEntity
 function GameEntity:delete() end
+
+---@type GameEntityDef[] Table of tables with identifier as a key and definition table as a value
+Core.registered_definitions.game_entities = {}
