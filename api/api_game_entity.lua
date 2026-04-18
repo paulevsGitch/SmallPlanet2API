@@ -11,8 +11,8 @@
 ---@class GameEntityDef
 ---@field affected_by_gravity? boolean Is entity affected by gravity, optional. Default is false
 ---@field orient_by_gravity? boolean Is entity rotated by local gravity, optional. Default is false
----@field shadow_mesh? string|DynamicMeshDef Shadow Mesh identifier, optional
----@field visual_mesh? string|DynamicMeshDef|MeshDef[] Visual Mesh identifier or mesh with LODs array, optional
+---@field visual_model? string Visual Mesh identifier, optional
+---@field shadow_model? string Shadow Mesh identifier, optional
 ---@field collisions? CollisionDef Colliders definition, optional
 ---@field interaction? EntityInteractionDef key-based interaction with entity, optional
 ---@field on_spawn? fun(game_entity: GameEntity) Function called when entity spawns, optional
