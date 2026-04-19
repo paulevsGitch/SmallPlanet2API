@@ -28,17 +28,6 @@ Core.load_script = function (identifier) end
 ---@field name string Mesh name
 ---@field minimal_distance? number Minimal distance in meters for mesh to become visible, optional
 
----@class Collider Collider definition table
----@field type "mesh"|"sphere"|"cube" Type of collider
----@field mesh? string Mesh identifier for mesh collider, optional. Will be transformed to path "<namespace>/meshes/<path>.bmesh"
----@field radius? number Spherical collider radius, optional
----@field size? Vector3 Cube collider size, optional
----@field position? Vector3 Collider position relative to object center, optional
-
----@class CollisionDef
----@field colliders Collider[] Array of colliders
----@field collide_with? string[] Optional collider flags, possible values: "terrain", "game_objects", "players", "entities", "items"
-
 ---@class ItemDef
 ---@field mesh? string Item mesh, optional
 ---@field view_mode? "side"|"top" Icon view mode, optional. Default is "side"
