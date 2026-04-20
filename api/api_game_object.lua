@@ -11,6 +11,7 @@
 ---@field interaction? ObjectInteractionDef key-based interaction with object, optional
 ---@field on_spawn? fun(game_object: GameObject) Function called when entity spawns, optional
 ---@field on_tick? fun(game_object: GameObject, delta: number) On-tick function, optional
+---@field player_collision? PlayerCollisionDef Area-based player interraction, optional
 
 ---Register new Game Object with specidied identifier and definition.
 ---@param identifier string Object identifier
