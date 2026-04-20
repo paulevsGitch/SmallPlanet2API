@@ -20,3 +20,7 @@
 ---@class CollisionDef
 ---@field colliders Collider[] Array of colliders
 ---@field collide_with? string[] Optional collider flags, possible values: "terrain", "game_objects", "players", "entities", "items"
+
+---@class PlayerCollisionDef
+---@field colliders Collider[] Array of colliders
+---@field on_collision fun(game_entity: GameEntity, player: Player) Function called when entity collides with player
