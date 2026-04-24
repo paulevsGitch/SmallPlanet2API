@@ -137,10 +137,6 @@ Core.create_game_entity = function (identifier) end
 ---@param message string
 Core.send_message = function (message) end
 
----Get ticks in milliseconds since the game start
----@return integer
-Core.get_ticks_msec = function () end
-
 ---Plays sound at specified position
 ---@param sound_id string Souund Identifier
 ---@param position Vector3 Sound position
