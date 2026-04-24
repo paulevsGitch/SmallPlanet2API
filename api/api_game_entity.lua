@@ -4,10 +4,6 @@
 ---@field title? string Interaction title, optional. Default is "Interact"
 ---@field action fun(game_entity: GameEntity, player: Player) Interaction function
 
----@class DynamicMeshDef
----@field type "dynamic"
----@field custom_data_field string Custom data field, used to read value from custom_data what mesh should be rendered
-
 ---@class GameEntityDef
 ---@field affected_by_gravity? boolean Is entity affected by gravity, optional. Default is false
 ---@field orient_by_gravity? boolean Is entity rotated by local gravity, optional. Default is false

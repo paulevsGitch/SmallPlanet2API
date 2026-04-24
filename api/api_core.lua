@@ -24,20 +24,6 @@ Core.registered_definitions.planets = {}
 ---@param identifier string
 Core.load_script = function (identifier) end
 
----@class MeshDef View range definition table
----@field name string Mesh name
----@field minimal_distance? number Minimal distance in meters for mesh to become visible, optional
-
----@class ItemDef
----@field mesh? string Item mesh, optional
----@field view_mode? "side"|"top" Icon view mode, optional. Default is "side"
-
----Register new Item with specidied identifier and definition.
----@param identifier string Item identifier
----@param def_table ItemDef
----@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
-Core.register_game_item = function (identifier, def_table, override_object) end
-
 ---@class BiomeDecorationDef
 ---@field object_id string Game object id
 ---@field distance? number Average distance between objects, optional. Default is 1.0
