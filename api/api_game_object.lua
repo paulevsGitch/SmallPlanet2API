@@ -19,10 +19,10 @@
 ---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 Core.register_game_object = function (identifier, def_table, override_object) end
 
----@class GameObject
----@field position Vector3
----@field rotation Vector3
----@field scale Vector3
+---@class GameObject Common class for all static objects in the game
+---@field position Vector3 Object position in meters
+---@field rotation Vector3 Object rotation in radians
+---@field scale Vector3 Object scale in meters
 GameObject = {}
 
 ---Deletes this GameObject

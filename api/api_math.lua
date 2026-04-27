@@ -20,3 +20,13 @@ function math.clamp(value, min_value, max_value) end
 ---@param max_value number The maximum range value.
 ---@return number
 function math.random_range(min_value, max_value) end
+
+---Convert angle from degrees to radians
+---@param value number Angle to convert
+---@return number
+function math.degrees_to_radians(value) end
+
+---Convert angle from radians to degrees
+---@param value number Angle to convert
+---@return number
+function math.radians_to_degrees(value) end

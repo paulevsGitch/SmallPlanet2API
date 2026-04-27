@@ -21,12 +21,12 @@
 ---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 Core.register_game_entity = function (identifier, def_table, override_object) end
 
----@class GameEntity
----@field position Vector3
----@field rotation Vector3
----@field scale Vector3
----@field linear_velocity Vector3
----@field angular_velocity Vector3
+---@class GameEntity Common class for all movable and living objects in the game (except Player)
+---@field position Vector3 Entity position in meters
+---@field rotation Vector3 Entity rotation in radians
+---@field scale Vector3 Entity scale in meters
+---@field linear_velocity Vector3 Entity linear velocity in meters/second
+---@field angular_velocity Vector3 Entity angular velocity in radians/second
 ---@field planet string Entity planet Identifier
 ---@field custom_data table Table for custom data storage
 GameEntity = {}
