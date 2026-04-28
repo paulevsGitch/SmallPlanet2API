@@ -126,7 +126,7 @@ Core.send_message = function (message) end
 ---Plays sound at specified position
 ---@param sound_id string Souund Identifier
 ---@param position Vector3 Sound position
----@param volume? number Sound volume offset, optional. Default is 0.0
+---@param volume? number Sound linear volume, optional. Default is 1.0
 ---@param pitch? number Sound pitch scale, optional. Default is 1.0
 Core.play_sound = function (sound_id, position, volume, pitch) end
 
@@ -144,11 +144,11 @@ Core.play_sound = function (sound_id, position, volume, pitch) end
 Core.play_random_sound = function (sound_table, position) end
 
 ---Creates item entitity at specified position
----@param position Vector3
----@param velocity Vector3
----@param item_id string
----@param item_count integer
-Core.create_item_entity = function (position, velocity, item_id, item_count) end
+---@param position Vector3 Spawn position
+---@param item_id string Item identifier
+---@param item_count? integer Item count, optional. Default is 1
+---@param pickup_time? integer Time before item will be abled to pickup by player, in seconds, optional. Default is 0.0
+Core.create_item_entity = function (position, item_id, item_count, pickup_time) end
 
 ---Get all players near specified position within the radius
 ---@param position Vector3
