@@ -156,3 +156,8 @@ Core.create_item_entity = function (position, item_id, item_count, pickup_time) 
 ---@return Player[]
 Core.get_players_in_radius = function (position, radius) end
 
+---Cast a ray in a world during physics tick, calls a callback if there is a hit
+---@param start_position Vector3
+---@param end_position Vector3
+---@param callback fun(position: Vector3, hit_object: GameObject)
+Core.game_object_raycast = function (start_position, end_position, callback) end

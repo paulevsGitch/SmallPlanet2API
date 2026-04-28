@@ -23,6 +23,7 @@ Core.register_game_object = function (identifier, def_table, override_object) en
 ---@field position Vector3 Object position in meters
 ---@field rotation Vector3 Object rotation in radians
 ---@field scale Vector3 Object scale in meters
+---@field custom_data table Table for custom data storage
 GameObject = {}
 
 ---Deletes this GameObject
