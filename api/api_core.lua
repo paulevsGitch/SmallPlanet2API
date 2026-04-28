@@ -155,3 +155,4 @@ Core.create_item_entity = function (position, velocity, item_id, item_count) end
 ---@param radius number
 ---@return Player[]
 Core.get_players_in_radius = function (position, radius) end
+

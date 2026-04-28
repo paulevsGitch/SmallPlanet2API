@@ -36,3 +36,9 @@ function GameEntity:delete() end
 
 ---@type GameEntityDef[] Table of tables with identifier as a key and definition table as a value
 Core.registered_definitions.game_entities = {}
+
+---Get all players near specified position within the radius
+---@param position Vector3
+---@param radius number
+---@return GameEntity[]
+Core.get_entities_in_radius = function (position, radius) end

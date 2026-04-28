@@ -27,3 +27,9 @@ GameObject = {}
 
 ---Deletes this GameObject
 function GameObject:delete() end
+
+---Get all players near specified position within the radius
+---@param position Vector3
+---@param radius number
+---@return GameObject[]
+Core.get_objects_in_radius = function (position, radius) end
