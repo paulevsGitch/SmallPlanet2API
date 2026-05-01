@@ -4,7 +4,7 @@
 ---@field mesh string Mesh identifier. Will be transformed to path "<namespace>/meshes/<path>.bmesh"
 ---@field distance number Distance when LOD start become visible
 
----@alias GameModelDefinition StaticGameModelDef|DynamicGameModelDefinition
+---@alias GameModelDefinition StaticGameModelDefinition|DynamicGameModelDefinition
 
 ---@class StaticGameModelDefinition
 ---@field type "static"
