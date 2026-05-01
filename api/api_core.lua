@@ -2,47 +2,11 @@
 
 ---Main game class
 ---@class Core
----@field registered_definitions table A table of different categories for registered object definitions
 Core = {}
-
----@type GameObjectDef[] Table of tables with identifier as a key and definition table as a value
-Core.registered_definitions.game_objects = {}
-
----@type ItemDef[] Table of tables with identifier as a key and definition table as a value
-Core.registered_definitions.game_items = {}
-
----@type BiomeDef[] Table of tables with identifier as a key and definition table as a value
-Core.registered_definitions.game_biomes = {}
-
----@type StarDef[] Table of tables with identifier as a key and definition table as a value
-Core.registered_definitions.stars = {}
-
----@type PlanetDef[] Table of tables with identifier as a key and definition table as a value
-Core.registered_definitions.planets = {}
 
 ---Loads a new script using its identifier.
 ---@param identifier string
 Core.load_script = function (identifier) end
-
----@class BiomeDecorationDef
----@field object_id string Game object id
----@field distance? number Average distance between objects, optional. Default is 1.0
----@field scale? FloatFunction Scale of the object, optional. Default is 1.0
----@field orientation? "local_up"|"surface_normal"|"random" Decoaration orientation, optional. Default is "local_up"
----@field conditions? TerrainCondition[]
-
----@class BiomeDef
----@field terrain string|table Terrain Id or table with terrain rules
----@field height? number|FloatFunction Height value or function for terrain generation, optional
----@field far_decorations? BiomeDecorationDef[] Far decorations (big objects), optional
----@field near_decorations? BiomeDecorationDef[] Near decorations (small objects), optional
----@field ambient_sound? string Biome ambient sound loop, optional
-
----Register Biome with specidied identifier and definition.
----@param identifier string Biome identifier
----@param def_table BiomeDef
----@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
-Core.register_game_biome = function (identifier, def_table, override_object) end
 
 ---@class OrbitDef
 ---@field radius number Orbit radius
@@ -155,6 +119,18 @@ Core.create_item_entity = function (position, item_id, item_count, pickup_time) 
 ---@param radius number
 ---@return Player[]
 Core.get_players_in_radius = function (position, radius) end
+
+---Get all players near specified position within the radius
+---@param position Vector3
+---@param radius number
+---@return GameObject[]
+Core.get_objects_in_radius = function (position, radius) end
+
+---Get all players near specified position within the radius
+---@param position Vector3
+---@param radius number
+---@return GameEntity[]
+Core.get_entities_in_radius = function (position, radius) end
 
 ---Cast a ray in a world during physics tick, calls a callback if there is a hit
 ---@param start_position Vector3

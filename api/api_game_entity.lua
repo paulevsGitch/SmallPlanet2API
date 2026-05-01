@@ -15,12 +15,6 @@
 ---@field on_tick? fun(game_entity: GameEntity, delta: number) On-tick function, optional
 ---@field player_collision? PlayerCollisionDef Area-based player interraction, optional
 
----Register GameEntity with specidied identifier and definition.
----@param identifier string GameEntity identifier
----@param def_table GameEntityDef GameEntity definition
----@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
-Core.register_game_entity = function (identifier, def_table, override_object) end
-
 ---@class GameEntity Common class for all movable and living objects in the game (except Player)
 ---@field position Vector3 Entity position in meters
 ---@field rotation Vector3 Entity rotation in radians
@@ -33,12 +27,3 @@ GameEntity = {}
 
 ---Deletes this GameEntity
 function GameEntity:delete() end
-
----@type GameEntityDef[] Table of tables with identifier as a key and definition table as a value
-Core.registered_definitions.game_entities = {}
-
----Get all players near specified position within the radius
----@param position Vector3
----@param radius number
----@return GameEntity[]
-Core.get_entities_in_radius = function (position, radius) end
