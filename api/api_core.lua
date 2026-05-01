@@ -143,3 +143,8 @@ Core.get_entities_in_radius = function (position, radius) end
 ---@param end_position Vector3
 ---@param callback fun(position: Vector3, hit_object: GameObject)
 Core.game_object_raycast = function (start_position, end_position, callback) end
+
+---Creates damage decal on specified position facing on specified normal
+---@param position Vector3
+---@param normal Vector3
+Core.create_damage_decal = function (position, normal) end

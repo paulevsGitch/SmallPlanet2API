@@ -11,4 +11,4 @@
 ---@field mesh? string Item mesh, optional
 ---@field icon_rotation? Vector3 Icon rotation in radians, optional
 ---@field tags? string[] Array of tags, each tag is identifier
----@field on_use? OnItemUseDef
+---@field on_use? OnItemUseDefinition
