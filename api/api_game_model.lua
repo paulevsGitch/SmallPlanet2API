@@ -1,17 +1,17 @@
 ---@meta
 
----@class GameModelLODDef
+---@class GameModelLODDefinition
 ---@field mesh string Mesh identifier. Will be transformed to path "<namespace>/meshes/<path>.bmesh"
 ---@field distance number Distance when LOD start become visible
 
----@alias GameModelDef StaticGameModelDef|DynamicGameModelDef
+---@alias GameModelDefinition StaticGameModelDef|DynamicGameModelDefinition
 
----@class StaticGameModelDef
+---@class StaticGameModelDefinition
 ---@field type "static"
 ---@field mesh string Mesh identifier. Will be transformed to path "<namespace>/meshes/<path>.bmesh"
----@field lods? "auto"|GameModelLODDef[] Mesh levels of details, optional
+---@field lods? "auto"|GameModelLODDefinition[] Mesh levels of details, optional
 ---@field impostor_type? "vertical"|"horizontal" Mesh impostor type for rendering on large distance, optional
 
----@class DynamicGameModelDef
+---@class DynamicGameModelDefinition
 ---@field type "dynamic"
 ---@field custom_data_field string Custom data field to read the model ID from, field must be string

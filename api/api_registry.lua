@@ -3,56 +3,56 @@
 ---@class Registry Global access to all game registries
 Registry = {
 	game_model = {
-		---@type GameModelDef[] Registered GameModel definitions
+		---@type GameModelDefinition[] Registered GameModel definitions
 		definitions = {},
 		---Register GameModel with specidied identifier and definition.
 		---@param identifier string GameModel identifier
-		---@param def_table GameModelDef GameModel definition
+		---@param def_table GameModelDefinition GameModel definition
 		---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 		register = function (identifier, def_table, override_object) end
 	},
 	terrain_material = {
-		---@type TerrainMaterialDef[] Registered TerrainMaterial definitions with identifier as a key
+		---@type TerrainMaterialDefinition[] Registered TerrainMaterial definitions with identifier as a key
 		definitions = {},
 		---Register TerrainMaterial with specidied identifier and definition.
 		---@param identifier string TerrainMaterial identifier
-		---@param def_table TerrainMaterialDef TerrainMaterial definition
+		---@param def_table TerrainMaterialDefinition TerrainMaterial definition
 		---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 		register = function (identifier, def_table, override_object) end
 	},
 	game_object = {
-		---@type GameObjectDef[] Registered GameObjectDef definitions with identifier as a key
+		---@type GameObjectDefinition[] Registered GameObjectDefinition definitions with identifier as a key
 		definitions = {},
-		---Register GameObjectDef with specidied identifier and definition.
-		---@param identifier string GameObjectDef identifier
-		---@param def_table GameObjectDef GameObjectDef definition
+		---Register GameObjectDefinition with specidied identifier and definition.
+		---@param identifier string GameObjectDefinition identifier
+		---@param def_table GameObjectDefinition GameObjectDefinition definition
 		---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 		register = function (identifier, def_table, override_object) end
 	},
 	game_item = {
-		---@type GameItemDef[] Registered GameItemDef definitions with identifier as a key
+		---@type GameItemDefinition[] Registered GameItemDefinition definitions with identifier as a key
 		definitions = {},
-		---Register GameItemDef with specidied identifier and definition.
-		---@param identifier string GameItemDef identifier
-		---@param def_table GameItemDef GameItemDef definition
+		---Register GameItemDefinition with specidied identifier and definition.
+		---@param identifier string GameItemDefinition identifier
+		---@param def_table GameItemDefinition GameItemDefinition definition
 		---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 		register = function (identifier, def_table, override_object) end
 	},
 	game_entity = {
-		---@type GameEntityDef[] Registered GameEntityDef definitions with identifier as a key
+		---@type GameEntityDefinition[] Registered GameEntityDefinition definitions with identifier as a key
 		definitions = {},
-		---Register GameEntityDef with specidied identifier and definition.
-		---@param identifier string GameEntityDef identifier
-		---@param def_table GameEntityDef GameEntityDef definition
+		---Register GameEntityDefinition with specidied identifier and definition.
+		---@param identifier string GameEntityDefinition identifier
+		---@param def_table GameEntityDefinition GameEntityDefinition definition
 		---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 		register = function (identifier, def_table, override_object) end
 	},
 	game_biome = {
-		---@type GameBiomeDef[] Registered GameBiomeDef definitions with identifier as a key
+		---@type GameBiomeDefinition[] Registered GameBiomeDefinition definitions with identifier as a key
 		definitions = {},
-		---Register GameBiomeDef with specidied identifier and definition.
-		---@param identifier string GameBiomeDef identifier
-		---@param def_table GameBiomeDef GameBiomeDef definition
+		---Register GameBiomeDefinition with specidied identifier and definition.
+		---@param identifier string GameBiomeDefinition identifier
+		---@param def_table GameBiomeDefinition GameBiomeDefinition definition
 		---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 		register = function (identifier, def_table, override_object) end
 	}

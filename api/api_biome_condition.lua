@@ -1,17 +1,16 @@
 ---@meta
 
----@class BiomeCondition
----@field type string
+---@alias BiomeCondition AboveValueBiomeCondition|BelowValueBiomeCondition|BetweenValueBiomeCondition
 
----@class AboveValueBiomeCondition: BiomeCondition
+---@class AboveValueBiomeCondition
 ---@field type "above_value"
 ---@field value number
 
----@class BelowValueBiomeCondition: BiomeCondition
+---@class BelowValueBiomeCondition
 ---@field type "below_value"
 ---@field value number
 
----@class BetweenValueBiomeCondition: BiomeCondition
+---@class BetweenValueBiomeCondition
 ---@field type "between_values"
 ---@field min_value number
 ---@field max_value number

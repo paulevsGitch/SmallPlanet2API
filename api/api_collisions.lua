@@ -17,10 +17,10 @@
 ---@field size? Vector3 Cube collider size, optional
 ---@field position? Vector3 Collider position relative to object center, optional
 
----@class CollisionDef
+---@class CollisionDefinition
 ---@field colliders Collider[] Array of colliders
 ---@field collide_with? string[] Optional collider flags, possible values: "terrain", "game_objects", "players", "entities", "items"
 
----@class PlayerCollisionDef
+---@class PlayerCollisionDefinition
 ---@field colliders Collider[] Array of colliders
 ---@field on_collision fun(game_entity: GameEntity, player: Player) Function called when entity collides with player

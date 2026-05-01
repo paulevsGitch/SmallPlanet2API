@@ -8,30 +8,30 @@ Core = {}
 ---@param identifier string
 Core.load_script = function (identifier) end
 
----@class OrbitDef
+---@class OrbitDefinition
 ---@field radius number Orbit radius
 ---@field parent string Parent body Identifier
 ---@field period number Orbit period in minutes
 
----@class StarDef
+---@class StarDefinition
 ---@field radius number Star radius in meters
 ---@field temperature number Star temperature in Kelvin
 
 ---Register Planet with specidied identifier and definition.
 ---@param identifier string Planet identifier
----@param def_table StarDef
+---@param def_table StarDefinition
 ---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 Core.register_star = function (identifier, def_table, override_object) end
 
----@class BiomeConditionDef
+---@class BiomeConditionDefinition
 ---@field name string Biome Id
 ---@field rules? BiomeCondition[] Conditions for biome to spawn
 
----@class BiomeGeneratorDef
+---@class BiomeGeneratorDefinition
 ---@field parameters? table<string,FloatFunction> Parameters for worldgen, optional
----@field biomes BiomeConditionDef[] Biomes to generate
+---@field biomes BiomeConditionDefinition[] Biomes to generate
 
----@class CloudsDef
+---@class CloudsDefinition
 ---@field scale number Average clouds scale in meters, relative to clouds noise frequency
 ---@field height number Clouds layer height relative to the planet zero ground
 ---@field depth number Clouds layer depth (vertical height from bottom of the layer to top of the layer)
@@ -42,31 +42,31 @@ Core.register_star = function (identifier, def_table, override_object) end
 ---@field cyclones_scale? number Cyclones scale, optional. Default is 0.0 (no cyclones)
 ---@field cyclones_intensity? number Cyclones intensity, optional. Default is 0.0
 
----@class AtmosphereDef
----@field clouds? CloudsDef Atmosphere clouds definition, optional
+---@class AtmosphereDefinition
+---@field clouds? CloudsDefinition Atmosphere clouds definition, optional
 
 ---@class RingShape
 ---@field inner_radius number
 ---@field width number
 
----@class RingsDef
+---@class RingsDefinition
 ---@field bottom_color string Color close to the planet in RRGGBB format
 ---@field top_color string Color far from the planet in RRGGBB format
 ---@field shapes RingShape[] Ring shapes
 
----@class PlanetDef
+---@class PlanetDefinition
 ---@field radius number Planet radius in meters
 ---@field rotation_period number Planet rotation period (length of the full day+night cycle) in minutes
 ---@field gravitational_acceleration number Planet gravity strength in meters/second^2, Earth have 9.8
----@field orbit OrbitDef Planet orbit definition
+---@field orbit OrbitDefinition Planet orbit definition
 ---@field inclination? number Planet inclination in degrees, optional. Default is 0.0
----@field biome_generator BiomeGeneratorDef Biome generator for the planet
----@field atmosphere? AtmosphereDef Atmospehre properties of the planet, optional
----@field rings? RingsDef Rings properties of the planet, optional
+---@field biome_generator BiomeGeneratorDefinition Biome generator for the planet
+---@field atmosphere? AtmosphereDefinition Atmospehre properties of the planet, optional
+---@field rings? RingsDefinition Rings properties of the planet, optional
 
 ---Register Planet with specidied identifier and definition.
 ---@param identifier string Planet identifier
----@param def_table PlanetDef
+---@param def_table PlanetDefinition
 ---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 Core.register_planet = function (identifier, def_table, override_object) end
 
@@ -94,7 +94,7 @@ Core.send_message = function (message) end
 ---@param pitch? number Sound pitch scale, optional. Default is 1.0
 Core.play_sound = function (sound_id, position, volume, pitch) end
 
----@class RandomSoundDef
+---@class RandomSoundDefinition
 ---@field sound_id string Souund Identifier
 ---@field min_volume? number Minimal sound volume offset, optinal. Default is 0.0
 ---@field max_volume? number Maximal sound volume offset, optinal. Default is 0.0
@@ -103,7 +103,7 @@ Core.play_sound = function (sound_id, position, volume, pitch) end
 
 ---Plays random sound at specified position
 ---Example: default:good_sound -> default:good_sound_5
----@param sound_table RandomSoundDef[] Sound array
+---@param sound_table RandomSoundDefinition[] Sound array
 ---@param position Vector3 Sound position
 Core.play_random_sound = function (sound_table, position) end
 
