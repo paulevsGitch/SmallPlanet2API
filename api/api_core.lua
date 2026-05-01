@@ -1,16 +1,18 @@
 ---@meta Core
 
+---@alias Identifier string
+
 ---Main game class
 ---@class Core
 Core = {}
 
 ---Loads a new script using its identifier.
----@param identifier string
+---@param identifier Identifier
 Core.load_script = function (identifier) end
 
 ---@class OrbitDefinition
 ---@field radius number Orbit radius
----@field parent string Parent body Identifier
+---@field parent Identifier Parent body Identifier
 ---@field period number Orbit period in minutes
 
 ---@class StarDefinition
@@ -18,7 +20,7 @@ Core.load_script = function (identifier) end
 ---@field temperature number Star temperature in Kelvin
 
 ---Register Planet with specidied identifier and definition.
----@param identifier string Planet identifier
+---@param identifier Identifier Planet identifier
 ---@param def_table StarDefinition
 ---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 Core.register_star = function (identifier, def_table, override_object) end
@@ -65,7 +67,7 @@ Core.register_star = function (identifier, def_table, override_object) end
 ---@field rings? RingsDefinition Rings properties of the planet, optional
 
 ---Register Planet with specidied identifier and definition.
----@param identifier string Planet identifier
+---@param identifier Identifier Planet identifier
 ---@param def_table PlanetDefinition
 ---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 Core.register_planet = function (identifier, def_table, override_object) end
@@ -79,7 +81,7 @@ Core.register_planet = function (identifier, def_table, override_object) end
 Core.pack_color = function (r, g, b, a) end
 
 ---Creates new entity with specified Id
----@param identifier string Entity identifier
+---@param identifier Identifier Entity identifier
 ---@return GameEntity
 Core.create_game_entity = function (identifier) end
 
