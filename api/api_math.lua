@@ -6,7 +6,7 @@ function math.round(value) end
 
 ---@param a number The starting value.
 ---@param b number The ending value.
----@param weight number The interpolation weight in range [0-1].
+---@param weight number The interpolation weight in range [0.0 - 1.0].
 ---@return number
 function math.lerp(a, b, weight) end
 

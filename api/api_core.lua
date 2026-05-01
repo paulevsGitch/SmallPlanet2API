@@ -1,5 +1,9 @@
 ---@meta Core
 
+---Indentifier is a universal key for almost all objects in the game.
+---It should be in "namespace:path/to/object" structure, in lower case.
+---It can have exactly one colon, [a - z] letters (Ascii letters), [0 - 9] numbers (Ascii digits), and slashes.
+---Any other symbols like special symbols, dots or letters are not valid.
 ---@alias Identifier string
 
 ---Main game class
