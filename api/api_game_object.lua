@@ -14,9 +14,10 @@
 ---@field player_collision? PlayerCollisionDefinition Area-based player interraction, optional
 
 ---@class GameObject Common class for all static objects in the game
----@field position Vector3 Object position in meters
----@field rotation Vector3 Object rotation in radians
----@field scale Vector3 Object scale in meters
+---@field identifier Identifier GameObject identifier
+---@field position Vector3 GameObject position in meters
+---@field rotation Vector3 GameObject rotation in radians
+---@field scale Vector3 GameObject scale in meters
 ---@field custom_data table Table for custom data storage
 GameObject = {}
 

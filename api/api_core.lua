@@ -145,6 +145,7 @@ Core.get_entities_in_radius = function (position, radius) end
 Core.game_object_raycast = function (start_position, end_position, callback) end
 
 ---Creates damage decal on specified position facing on specified normal
----@param position Vector3
----@param normal Vector3
-Core.create_damage_decal = function (position, normal) end
+---@param game_object GameObject Parent game object for decal to stay in place. Decal will dissapear together with the object or after 10 seconds.
+---@param position Vector3 Decal position
+---@param normal Vector3 Decal normal for proper orientation on surface
+Core.create_damage_decal = function (game_object, position, normal) end

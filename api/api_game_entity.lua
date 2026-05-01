@@ -16,12 +16,13 @@
 ---@field player_collision? PlayerCollisionDefinition Area-based player interraction, optional
 
 ---@class GameEntity Common class for all movable and living objects in the game (except Player)
----@field position Vector3 Entity position in meters
----@field rotation Vector3 Entity rotation in radians
----@field scale Vector3 Entity scale in meters
----@field linear_velocity Vector3 Entity linear velocity in meters/second
----@field angular_velocity Vector3 Entity angular velocity in radians/second
----@field planet string Entity planet Identifier
+---@field identifier Identifier GameEntity identifier
+---@field position Vector3 GameEntity position in meters
+---@field rotation Vector3 GameEntity rotation in radians
+---@field scale Vector3 GameEntity scale in meters
+---@field linear_velocity Vector3 GameEntity linear velocity in meters/second
+---@field angular_velocity Vector3 GameEntity angular velocity in radians/second
+---@field planet string GameEntity planet Identifier
 ---@field custom_data table Table for custom data storage
 GameEntity = {}
 
