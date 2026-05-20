@@ -47,7 +47,6 @@
 ---@field type "between_heights"
 ---@field min_height number
 ---@field max_height number
----@field value_function FloatFunction
 
 ---@class AndTerrainCondition
 ---@field type "and"
