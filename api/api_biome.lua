@@ -1,13 +1,13 @@
 ---@class BiomeDecorationDefinition
----@field object_id string Game object id
----@field distance? number Average distance between objects, optional. Default is 1.0
----@field scale? FloatFunction Scale of the object, optional. Default is 1.0
----@field orientation? "local_up"|"surface_normal"|"random" Decoaration orientation, optional. Default is "local_up"
 ---@field conditions? TerrainCondition[]
+---@field distance? number Average distance between objects, optional. Default is 1.0
+---@field object_id string Game object id
+---@field orientation? "local_up"|"surface_normal"|"random" Decoaration orientation, optional. Default is "local_up"
+---@field scale? FloatFunction Scale of the object, optional. Default is 1.0
 
 ---@class GameBiomeDefinition
----@field terrain string|table Terrain Id or table with terrain rules
----@field height? number|FloatFunction Height value or function for terrain generation, optional
----@field far_decorations? BiomeDecorationDefinition[] Far decorations (big objects), optional
----@field near_decorations? BiomeDecorationDefinition[] Near decorations (small objects), optional
 ---@field ambient_sound? string Biome ambient sound loop, optional
+---@field far_decorations? BiomeDecorationDefinition[] Far decorations (big objects), optional
+---@field height? number|FloatFunction Height value or function for terrain generation, optional
+---@field near_decorations? BiomeDecorationDefinition[] Near decorations (small objects), optional
+---@field terrain string|table Terrain Id or table with terrain rules

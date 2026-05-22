@@ -57,18 +57,18 @@ Core.register_star = function (identifier, def_table, override_object) end
 
 ---@class RingsDefinition
 ---@field bottom_color string Color close to the planet in RRGGBB format
----@field top_color string Color far from the planet in RRGGBB format
 ---@field shapes RingShape[] Ring shapes
+---@field top_color string Color far from the planet in RRGGBB format
 
 ---@class PlanetDefinition
----@field radius number Planet radius in meters
----@field rotation_period number Planet rotation period (length of the full day+night cycle) in minutes
----@field gravitational_acceleration number Planet gravity strength in meters/second^2, Earth have 9.8
----@field orbit OrbitDefinition Planet orbit definition
----@field inclination? number Planet inclination in degrees, optional. Default is 0.0
----@field biome_generator BiomeGeneratorDefinition Biome generator for the planet
 ---@field atmosphere? AtmosphereDefinition Atmospehre properties of the planet, optional
+---@field biome_generator BiomeGeneratorDefinition Biome generator for the planet
+---@field gravitational_acceleration number Planet gravity strength in meters/second^2, Earth have 9.8
+---@field inclination? number Planet inclination in degrees, optional. Default is 0.0
+---@field orbit OrbitDefinition Planet orbit definition
+---@field radius number Planet radius in meters
 ---@field rings? RingsDefinition Rings properties of the planet, optional
+---@field rotation_period number Planet rotation period (length of the full day+night cycle) in minutes
 
 ---Register Planet with specidied identifier and definition.
 ---@param identifier Identifier Planet identifier
@@ -95,27 +95,29 @@ Core.create_game_entity = function (planet_id, entity_id) end
 Core.send_message = function (message) end
 
 ---Plays sound at specified position
+---@param planet_id Identifier Planet identifier
 ---@param sound_id string Souund Identifier
 ---@param position Vector3 Sound position
 ---@param volume? number Sound linear volume, optional. Default is 1.0
 ---@param pitch? number Sound pitch scale, optional. Default is 1.0
-Core.play_sound = function (sound_id, position, volume, pitch) end
+Core.play_sound = function (planet_id, sound_id, position, volume, pitch) end
 
 ---@class RandomSoundDefinition
----@field sound_id string Souund Identifier
----@field min_volume? number Minimal sound volume offset, optinal. Default is 0.0
----@field max_volume? number Maximal sound volume offset, optinal. Default is 0.0
----@field min_pitch? number Minimal sound pitch offset, optinal. Default is 1.0
 ---@field max_pitch? number Maximal sound pitch offset, optinal. Default is 1.0
+---@field min_pitch? number Minimal sound pitch offset, optinal. Default is 1.0
+---@field max_volume? number Maximal sound volume offset, optinal. Default is 0.0
+---@field min_volume? number Minimal sound volume offset, optinal. Default is 0.0
+---@field sound_id string Souund Identifier
 
 ---Plays random sound at specified position
 ---Example: default:good_sound -> default:good_sound_5
+---@param planet_id Identifier Planet identifier
 ---@param sound_table RandomSoundDefinition[] Sound array
 ---@param position Vector3 Sound position
-Core.play_random_sound = function (sound_table, position) end
+Core.play_random_sound = function (planet_id, sound_table, position) end
 
 ---Creates item entitity at specified position
----@param planet_id Identifier Item identifier
+---@param planet_id Identifier Planet identifier
 ---@param position Vector3 Spawn position
 ---@param item_id Identifier Item identifier
 ---@param item_count? integer Item count, optional. Default is 1
@@ -123,28 +125,32 @@ Core.play_random_sound = function (sound_table, position) end
 Core.create_item_entity = function (planet_id, position, item_id, item_count, pickup_time) end
 
 ---Get all players near specified position within the radius
+---@param planet_id Identifier Planet identifier
 ---@param position Vector3
 ---@param radius number
 ---@return Player[]
-Core.get_players_in_radius = function (position, radius) end
+Core.get_players_in_radius = function (planet_id, position, radius) end
 
 ---Get all players near specified position within the radius
+---@param planet_id Identifier Planet identifier
 ---@param position Vector3
 ---@param radius number
 ---@return GameObject[]
-Core.get_objects_in_radius = function (position, radius) end
+Core.get_objects_in_radius = function (planet_id, position, radius) end
 
 ---Get all players near specified position within the radius
+---@param planet_id Identifier Planet identifier
 ---@param position Vector3
 ---@param radius number
 ---@return GameEntity[]
-Core.get_entities_in_radius = function (position, radius) end
+Core.get_entities_in_radius = function (planet_id, position, radius) end
 
 ---Cast a ray in a world during physics tick, calls a callback if there is a hit
+---@param planet_id Identifier Planet identifier
 ---@param start_position Vector3
 ---@param end_position Vector3
 ---@param callback fun(position: Vector3, hit_object: GameObject)
-Core.game_object_raycast = function (start_position, end_position, callback) end
+Core.game_object_raycast = function (planet_id, start_position, end_position, callback) end
 
 ---Creates damage decal on specified position facing on specified normal
 ---@param game_object GameObject Parent game object for decal to stay in place. Decal will dissapear together with the object or after 10 seconds.
