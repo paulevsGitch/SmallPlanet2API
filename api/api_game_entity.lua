@@ -22,7 +22,7 @@
 ---@field scale Vector3 GameEntity scale in meters
 ---@field linear_velocity Vector3 GameEntity linear velocity in meters/second
 ---@field angular_velocity Vector3 GameEntity angular velocity in radians/second
----@field planet string GameEntity planet Identifier
+---@field planet Identifier GameEntity planet Identifier
 ---@field custom_data table Table for custom data storage
 GameEntity = {}
 

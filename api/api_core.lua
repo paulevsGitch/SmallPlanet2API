@@ -85,9 +85,10 @@ Core.register_planet = function (identifier, def_table, override_object) end
 Core.pack_color = function (r, g, b, a) end
 
 ---Creates new entity with specified Id
----@param identifier Identifier Entity identifier
+---@param planet_id Identifier Planet identifier
+---@param entity_id Identifier Entity identifier
 ---@return GameEntity
-Core.create_game_entity = function (identifier) end
+Core.create_game_entity = function (planet_id, entity_id) end
 
 ---Send message to chat
 ---@param message string
@@ -114,11 +115,12 @@ Core.play_sound = function (sound_id, position, volume, pitch) end
 Core.play_random_sound = function (sound_table, position) end
 
 ---Creates item entitity at specified position
+---@param planet_id Identifier Item identifier
 ---@param position Vector3 Spawn position
----@param item_id string Item identifier
+---@param item_id Identifier Item identifier
 ---@param item_count? integer Item count, optional. Default is 1
 ---@param pickup_time? integer Time before item will be abled to pickup by player, in seconds, optional. Default is 0.0
-Core.create_item_entity = function (position, item_id, item_count, pickup_time) end
+Core.create_item_entity = function (planet_id, position, item_id, item_count, pickup_time) end
 
 ---Get all players near specified position within the radius
 ---@param position Vector3
