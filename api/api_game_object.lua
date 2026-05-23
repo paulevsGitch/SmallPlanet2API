@@ -5,7 +5,7 @@
 ---@field title? string Interaction title, optional. Default is "Interact"
 
 ---@class GameObjectDefinition
----@field colliders? Collider[] Array of colliders, optional
+---@field collisions? CollisionDefinition
 ---@field interaction? ObjectInteractionDefinition key-based interaction with object, optional
 ---@field on_spawn? fun(game_object: GameObject) Function called when entity spawns, optional
 ---@field on_tick? fun(game_object: GameObject, delta: number) On-tick function, optional
