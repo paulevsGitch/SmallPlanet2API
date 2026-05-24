@@ -4,7 +4,7 @@
 
 ---@class ModelCollider
 ---@field type "model"
----@field model string Model identifier
+---@field model Identifier Model identifier
 ---@field model_collision? "default"|"convex" Model collision type, optional. Default will collide with all model triangles, convex will create a convex shape for collision
 
 ---@class SphereCollider
