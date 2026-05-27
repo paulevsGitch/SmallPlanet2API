@@ -1,19 +1,20 @@
 ---@meta
 
 ---@class ItemStack
----@field item_id Identifier item Identifier
----@field count? integer item count, optional
+---@field item_id Identifier Item Identifier
+---@field count? integer Item count, optional
 
 ---@class RecipeTag
----@field tag Identifier item tag Identifier
----@field value? number item tag value, optional
----@field count? integer item count, optional
+---@field tag Identifier Item tag Identifier
+---@field value? number Item tag value, optional
+---@field count? integer Item count, optional
 
 ---@alias CraftingIngredient ItemStack|RecipeTag
 
 ---@class CraftingRecipeDefinition
----@field result ItemStack crafting result
----@field ingredients CraftingIngredient[] crafting result
+---@field category Identifier Crafting recipe category
+---@field result ItemStack Crafting result
+---@field ingredients CraftingIngredient[] Crafting result
 
 ---@class Registry Global access to all game registries
 Registry = {
