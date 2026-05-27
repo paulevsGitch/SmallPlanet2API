@@ -8,7 +8,7 @@
 
 ---@class GameItemDefinition
 ---@field max_count? integer Max item stack size, optional. Should be in range [1-100], default is 100
----@field mesh? string Item mesh, optional
+---@field mesh? Identifier Item mesh, optional
 ---@field icon_rotation? Vector3 Icon rotation in radians, optional
----@field tags? string[] Array of tags, each tag is identifier
+---@field tags? table<Identifier,integer> Array of tags, each tag is identifier
 ---@field on_use? OnItemUseDefinition

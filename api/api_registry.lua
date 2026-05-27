@@ -1,5 +1,20 @@
 ---@meta
 
+---@class ItemStack
+---@field item_id Identifier item Identifier
+---@field count? integer item count, optional
+
+---@class RecipeTag
+---@field tag Identifier item tag Identifier
+---@field value? number item tag value, optional
+---@field count? integer item count, optional
+
+---@alias CraftingIngredient ItemStack|RecipeTag
+
+---@class CraftingRecipeDefinition
+---@field result ItemStack crafting result
+---@field ingredients CraftingIngredient[] crafting result
+
 ---@class Registry Global access to all game registries
 Registry = {
 	game_model = {
@@ -21,7 +36,7 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	game_object = {
-		---@type GameObjectDefinition[] Registered GameObjectDefinition definitions with identifier as a key
+		---@type GameObjectDefinition[] Registered GameObject definitions with identifier as a key
 		definitions = {},
 		---Register GameObjectDefinition with specidied identifier and definition.
 		---@param identifier Identifier GameObjectDefinition identifier
@@ -30,7 +45,7 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	game_item = {
-		---@type GameItemDefinition[] Registered GameItemDefinition definitions with identifier as a key
+		---@type GameItemDefinition[] Registered GameItem definitions with identifier as a key
 		definitions = {},
 		---Register GameItemDefinition with specidied identifier and definition.
 		---@param identifier Identifier GameItemDefinition identifier
@@ -39,7 +54,7 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	game_entity = {
-		---@type GameEntityDefinition[] Registered GameEntityDefinition definitions with identifier as a key
+		---@type GameEntityDefinition[] Registered GameEntity definitions with identifier as a key
 		definitions = {},
 		---Register GameEntityDefinition with specidied identifier and definition.
 		---@param identifier Identifier GameEntityDefinition identifier
@@ -48,11 +63,20 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	game_biome = {
-		---@type GameBiomeDefinition[] Registered GameBiomeDefinition definitions with identifier as a key
+		---@type GameBiomeDefinition[] Registered GameBiome definitions with identifier as a key
 		definitions = {},
 		---Register GameBiomeDefinition with specidied identifier and definition.
 		---@param identifier Identifier GameBiomeDefinition identifier
 		---@param def_table GameBiomeDefinition GameBiomeDefinition definition
+		---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
+		register = function (identifier, def_table, override_object) end
+	},
+	crafting_recipe = {
+		---@type CraftingRecipeDefinition[] Registered CraftingRecipe definitions with identifier as a key
+		definitions = {},
+		---Register CraftingRecipeDefinition with specidied identifier and definition.
+		---@param identifier Identifier CraftingRecipeDefinition identifier
+		---@param def_table CraftingRecipeDefinition CraftingRecipeDefinition definition
 		---@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
 		register = function (identifier, def_table, override_object) end
 	}
