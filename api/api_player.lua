@@ -10,8 +10,9 @@ Player = {}
 ---Add specified item to player inventory
 ---@param item_id string Item identifier
 ---@param count? integer Item count, optional. Default is 1
+---@param add_to_hotbar? boolean Add item starting from hotbar (in order selected hotbar -> second hotbar -> main inventory), optional. Default is false
 ---@return integer result Remained item count
-function Player:add_item(item_id, count) end
+function Player:add_item(item_id, count, add_to_hotbar) end
 
 ---@class ItemAnimationKey
 ---@field length number Animation key length in seconds
