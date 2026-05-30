@@ -105,8 +105,8 @@ Core.play_sound = function (planet_id, sound_id, position, volume, pitch) end
 ---@class RandomSoundDefinition
 ---@field max_pitch? number Maximal sound pitch offset, optinal. Default is 1.0
 ---@field min_pitch? number Minimal sound pitch offset, optinal. Default is 1.0
----@field max_volume? number Maximal sound volume offset, optinal. Default is 0.0
----@field min_volume? number Minimal sound volume offset, optinal. Default is 0.0
+---@field max_volume? number Maximal sound linear volume, optinal. Default is 1.0
+---@field min_volume? number Minimal sound linear volume, optinal. Default is 1.0
 ---@field sound_id string Souund Identifier
 
 ---Plays random sound at specified position
