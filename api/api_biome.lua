@@ -4,6 +4,7 @@
 ---@field object_id string Game object id
 ---@field orientation? "local_up"|"surface_normal"|"random" Decoaration orientation, optional. Default is "local_up"
 ---@field scale? FloatFunction Scale of the object, optional. Default is 1.0
+---@field height? number|FloatFunction Height value or function for biome decoration placement, optional
 
 ---@class GameBiomeDefinition
 ---@field ambient_sound? string Biome ambient sound loop, optional
