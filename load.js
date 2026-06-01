@@ -146,7 +146,15 @@ function parseText(text) {
 
 function formatTypes(types) {
 	if (!types) return "";
-	return types.split("|").map(t => `<span class='field_type'>${t.trim()}</span>`).join(" or ");
+	return types.split("|").map(t => {
+		let name = t.trim();
+		let result = `<span class="field_type">${name}</span>`;
+		name = name.replace("[]", "").trim();
+		if (CLASSES[name] !== undefined) {
+			result = `<a href="#${name}">${result}</a>`;
+		}
+		return result;
+	}).join(" or ");
 }
 
 function addClass([className, classData]) {
@@ -154,7 +162,7 @@ function addClass([className, classData]) {
 	div.className = "class_block";
 	document.body.append(div);
 
-	div.innerHTML = `<h1>${className}</h1>`;
+	div.innerHTML = `<h1 id="${className}">${className}</h1>`;
 	if (classData.comment) {
 		div.innerHTML += `<p class="class_comment">${classData.comment}</p>`;
 	}
@@ -210,24 +218,25 @@ function addClass([className, classData]) {
 
 async function main() {
 	const apis = [
-		"api/api_biome_condition.lua",
-		"api/api_biome.lua",
-		"api/api_collisions.lua",
-		"api/api_core.lua",
-		"api/api_float_function.lua",
-		"api/api_game_entity.lua",
-		"api/api_game_model.lua",
-		"api/api_game_object.lua",
-		"api/api_item.lua",
-		"api/api_math.lua",
-		"api/api_player.lua",
-		"api/api_registry.lua",
-		"api/api_string.lua",
-		"api/api_table.lua",
-		"api/api_terrain_condition.lua",
-		"api/api_terrain_material.lua",
-		"api/api_time.lua",
-		"api/api_vector3.lua"
+		"api/biome_condition_api.lua",
+		"api/biome_api.lua",
+		"api/collisions_api.lua",
+		"api/core_api.lua",
+		"api/float_function_api.lua",
+		"api/game_entity_api.lua",
+		"api/game_model_api.lua",
+		"api/game_object_api.lua",
+		"api/item_api.lua",
+		"api/math_api.lua",
+		"api/player_api.lua",
+		"api/registry_api.lua",
+		"api/string_api.lua",
+		"api/table_api.lua",
+		"api/terrain_condition_api.lua",
+		"api/terrain_material_api.lua",
+		"api/time_api.lua",
+		"api/tools_api.lua",
+		"api/vector3_api.lua"
 	];
 
 	for (const api of apis) {

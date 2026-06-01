@@ -2,7 +2,7 @@
 
 ---Indentifier is a universal key for almost all objects in the game.
 ---It should be in "namespace:path/to/object" structure, in lower case.
----It can have exactly one colon, [a - z] letters (Ascii letters), [0 - 9] numbers (Ascii digits), and slashes.
+---It can have exactly one colon, [a - z] letters(Ascii letters), [0 - 9] numbers(Ascii digits), and slashes.
 ---Any other symbols like special symbols, dots or letters are not valid.
 ---@alias Identifier string
 
@@ -12,7 +12,7 @@ Core = {}
 
 ---Loads a new script using its identifier.
 ---@param identifier Identifier
-Core.load_script = function (identifier) end
+function Core.load_script(identifier) end
 
 ---@class OrbitDefinition
 ---@field radius number Orbit radius
@@ -26,8 +26,8 @@ Core.load_script = function (identifier) end
 ---Register Planet with specidied identifier and definition.
 ---@param identifier Identifier Planet identifier
 ---@param def_table StarDefinition
----@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
-Core.register_star = function (identifier, def_table, override_object) end
+---@param override_object? boolean Override existing object, optional. Default is false(will throw an error)
+function Core.register_star(identifier, def_table, override_object) end
 
 ---@class BiomeConditionDefinition
 ---@field name string Biome Id
@@ -40,12 +40,12 @@ Core.register_star = function (identifier, def_table, override_object) end
 ---@class CloudsDefinition
 ---@field scale number Average clouds scale in meters, relative to clouds noise frequency
 ---@field height number Clouds layer height relative to the planet zero ground
----@field depth number Clouds layer depth (vertical height from bottom of the layer to top of the layer)
+---@field depth number Clouds layer depth(vertical height from bottom of the layer to top of the layer)
 ---@field coverage number Clouds coverage from 0.0 to 1.0
 ---@field linear_speed number Clouds linear speed at equator in m/s. Default is 0.0
----@field wind_bends_count? number Wind bends count, optional. Default is 0.0 (no bends)
+---@field wind_bends_count? number Wind bends count, optional. Default is 0.0(no bends)
 ---@field wind_bends_strength? number Wind bends strength, optional. Default is 0.0
----@field cyclones_scale? number Cyclones scale, optional. Default is 0.0 (no cyclones)
+---@field cyclones_scale? number Cyclones scale, optional. Default is 0.0(no cyclones)
 ---@field cyclones_intensity? number Cyclones intensity, optional. Default is 0.0
 
 ---@class AtmosphereDefinition
@@ -68,13 +68,13 @@ Core.register_star = function (identifier, def_table, override_object) end
 ---@field orbit OrbitDefinition Planet orbit definition
 ---@field radius number Planet radius in meters
 ---@field rings? RingsDefinition Rings properties of the planet, optional
----@field rotation_period number Planet rotation period (length of the full day+night cycle) in minutes
+---@field rotation_period number Planet rotation period(length of the full day+night cycle) in minutes
 
 ---Register Planet with specidied identifier and definition.
 ---@param identifier Identifier Planet identifier
 ---@param def_table PlanetDefinition
----@param override_object? boolean Override existing object, optional. Default is false (will throw an error)
-Core.register_planet = function (identifier, def_table, override_object) end
+---@param override_object? boolean Override existing object, optional. Default is false(will throw an error)
+function Core.register_planet(identifier, def_table, override_object) end
 
 ---Packs color values into string in RGBA format
 ---@param r integer Red color value, [0 - 255]
@@ -82,17 +82,17 @@ Core.register_planet = function (identifier, def_table, override_object) end
 ---@param b integer Blue color value, [0 - 255]
 ---@param a? integer Alpha color value, [0 - 255], optional
 ---@return string
-Core.pack_color = function (r, g, b, a) end
+function Core.pack_color(r, g, b, a) end
 
 ---Creates new entity with specified Id
 ---@param planet_id Identifier Planet identifier
 ---@param entity_id Identifier Entity identifier
 ---@return GameEntity
-Core.create_game_entity = function (planet_id, entity_id) end
+function Core.create_game_entity(planet_id, entity_id) end
 
 ---Send message to chat
 ---@param message string
-Core.send_message = function (message) end
+function Core.send_message(message) end
 
 ---Plays sound at specified position
 ---@param planet_id Identifier Planet identifier
@@ -100,7 +100,7 @@ Core.send_message = function (message) end
 ---@param position Vector3 Sound position
 ---@param volume? number Sound linear volume, optional. Default is 1.0
 ---@param pitch? number Sound pitch scale, optional. Default is 1.0
-Core.play_sound = function (planet_id, sound_id, position, volume, pitch) end
+function Core.play_sound(planet_id, sound_id, position, volume, pitch) end
 
 ---@class RandomSoundDefinition
 ---@field max_pitch? number Maximal sound pitch offset, optinal. Default is 1.0
@@ -114,46 +114,56 @@ Core.play_sound = function (planet_id, sound_id, position, volume, pitch) end
 ---@param planet_id Identifier Planet identifier
 ---@param sound_table RandomSoundDefinition[] Sound array
 ---@param position Vector3 Sound position
-Core.play_random_sound = function (planet_id, sound_table, position) end
+function Core.play_random_sound(planet_id, sound_table, position) end
 
----Creates item entitity at specified position
----@param planet_id Identifier Planet identifier
+---Create item entitity at specified position
+---@param planet_id Identifier Spawn planet Identifier
 ---@param position Vector3 Spawn position
----@param item_id Identifier Item identifier
+---@param item_id Identifier Item Identifier
 ---@param item_count? integer Item count, optional. Default is 1
 ---@param pickup_time? integer Time before item will be abled to pickup by player, in seconds, optional. Default is 0.0
-Core.create_item_entity = function (planet_id, position, item_id, item_count, pickup_time) end
+function Core.create_item_entity(planet_id, position, item_id, item_count, pickup_time) end
+
+---Create a line of item entities with specified offset
+---@param planet_id Identifier Spawn planet Identifier
+---@param start_position Vector3 Starting position
+---@param offset Vector3 Offset for the next entity position, will be added to the previos entity position
+---@param entities_count integer Count of spawning entities
+---@param item_id Identifier Item Identifier
+---@param item_count? integer Item count, optional. Default is 1
+---@param pickup_time? integer Time before item will be abled to pickup by player, in seconds, optional. Default is 0.0
+function Core.create_item_entities_line(planet_id, start_position, offset, entities_count, item_id, item_count, pickup_time) end
 
 ---Get all players near specified position within the radius
 ---@param planet_id Identifier Planet identifier
 ---@param position Vector3
 ---@param radius number
 ---@return Player[]
-Core.get_players_in_radius = function (planet_id, position, radius) end
+function Core.get_players_in_radius(planet_id, position, radius) end
 
 ---Get all players near specified position within the radius
 ---@param planet_id Identifier Planet identifier
 ---@param position Vector3
 ---@param radius number
 ---@return GameObject[]
-Core.get_objects_in_radius = function (planet_id, position, radius) end
+function Core.get_objects_in_radius(planet_id, position, radius) end
 
 ---Get all players near specified position within the radius
 ---@param planet_id Identifier Planet identifier
 ---@param position Vector3
 ---@param radius number
 ---@return GameEntity[]
-Core.get_entities_in_radius = function (planet_id, position, radius) end
+function Core.get_entities_in_radius(planet_id, position, radius) end
 
 ---Cast a ray in a world during physics tick, calls a callback if there is a hit
 ---@param planet_id Identifier Planet identifier
 ---@param start_position Vector3
 ---@param end_position Vector3
 ---@param callback fun(position: Vector3, hit_object: GameObject)
-Core.game_object_raycast = function (planet_id, start_position, end_position, callback) end
+function Core.game_object_raycast(planet_id, start_position, end_position, callback) end
 
 ---Creates damage decal on specified position facing on specified normal
 ---@param game_object GameObject Parent game object for decal to stay in place. Decal will dissapear together with the object or after 10 seconds.
 ---@param position Vector3 Decal position
 ---@param normal Vector3 Decal normal for proper orientation on surface
-Core.create_damage_decal = function (game_object, position, normal) end
+function Core.create_damage_decal(game_object, position, normal) end
