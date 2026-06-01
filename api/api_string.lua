@@ -1,4 +1,4 @@
----@meta string
+---@meta
 
 ---Checks if a string starts with another string. Returns true if the string starts with the given prefix, false otherwise.
 ---@param str string The string to check.

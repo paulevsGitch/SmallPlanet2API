@@ -1,3 +1,5 @@
+---@meta
+
 ---@class BiomeDecorationDefinition
 ---@field conditions? TerrainCondition[]
 ---@field distance? number Average distance between objects, optional. Default is 1.0
