@@ -1,6 +1,8 @@
 # SmallPlanet2API
 Lua API for SmallPlanet2 Game. API was made in Lua Language Server format (meta files) and can be used in Visual Studio Code or other editors that supports that format.
 
+# Online Web Version:
+**https://paulevsgitch.github.io/SmallPlanet2API**
 
 ## How to use in Visual Studio Code
 
