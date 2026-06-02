@@ -12,6 +12,7 @@
 ---@field player_collision? PlayerCollisionDefinition Area-based player interraction, optional
 ---@field shadow_model? string Shadow Model identifier, optional
 ---@field visual_model? string Visual Model identifier, optional
+---@field tool_data? GameObjectToolData GameObject drop definition, this field is used by Tools API
 
 ---@class GameObject Common class for all static objects in the game
 ---@field custom_data table Table for custom data storage
@@ -24,3 +25,8 @@ GameObject = {}
 
 ---Deletes this GameObject
 function GameObject:delete() end
+
+---Rotate vector based on object rotation
+---@param vector Vector3
+---@return Vector3
+function GameObject:rotate_vector(vector) end

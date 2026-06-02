@@ -124,16 +124,6 @@ function Core.play_random_sound(planet_id, sound_table, position) end
 ---@param pickup_time? integer Time before item will be abled to pickup by player, in seconds, optional. Default is 0.0
 function Core.create_item_entity(planet_id, position, item_id, item_count, pickup_time) end
 
----Create a line of item entities with specified offset
----@param planet_id Identifier Spawn planet Identifier
----@param start_position Vector3 Starting position
----@param offset Vector3 Offset for the next entity position, will be added to the previos entity position
----@param entities_count integer Count of spawning entities
----@param item_id Identifier Item Identifier
----@param item_count? integer Item count, optional. Default is 1
----@param pickup_time? integer Time before item will be abled to pickup by player, in seconds, optional. Default is 0.0
-function Core.create_item_entities_line(planet_id, start_position, offset, entities_count, item_id, item_count, pickup_time) end
-
 ---Get all players near specified position within the radius
 ---@param planet_id Identifier Planet identifier
 ---@param position Vector3

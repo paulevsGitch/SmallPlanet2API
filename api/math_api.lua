@@ -30,3 +30,17 @@ function math.degrees_to_radians(value) end
 ---@param value number Angle to convert
 ---@return number
 function math.radians_to_degrees(value) end
+
+---Create a line from vectors
+---@param start_position Vector3 Line starting point
+---@param offset Vector3 Offset to the next point from the current one
+---@param point_count integer Line points count (includes starting point)
+---@return Vector3[]
+function math.create_line(start_position, offset, point_count) end
+
+---Create a Fibonacci sphere with specified amount of points
+---@param point_count integer Sphere points count
+---@param center_position? Vector3 Sphere center position, optional. Default is [0.0, 0.0, 0.0]
+---@param radius? number Sphere radius, optional. Default is 1.0
+---@return Vector3[]
+function math.fibonacci_sphere(point_count, center_position, radius) end
