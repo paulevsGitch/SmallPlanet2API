@@ -84,9 +84,17 @@ function Core.register_planet(identifier, def_table, override_object) end
 ---@return string
 function Core.pack_color(r, g, b, a) end
 
----Creates new entity with specified Id
----@param planet_id Identifier Planet identifier
----@param entity_id Identifier Entity identifier
+---Creates new GameObject with specified Identifier
+---@param planet_id Identifier Planet Identifier
+---@param object_id Identifier GameObject Identifier
+---@param position Vector3 GameObject position
+---@param rotation? Vector3 GameObject rotation, optional
+---@param scale? Vector3 GameObject scale, optional
+function Core.create_game_object(planet_id, object_id, position, rotation, scale) end
+
+---Creates new GameEntity with specified Identifier and return it
+---@param planet_id Identifier Planet Identifier
+---@param entity_id Identifier Entity Identifier
 ---@return GameEntity
 function Core.create_game_entity(planet_id, entity_id) end
 

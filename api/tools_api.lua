@@ -10,6 +10,7 @@ Tools = {}
 ---@field break_sound? Identifier Breaking sound, played when onject is broken
 ---@field drop_item? ItemStack Item that will be dropped on each position
 ---@field drop_position? Vector3|Vector3[]|fun(game_object: GameObject): Vector3[] Drop positions relative to object
+---@field remained_object? Identifier Remained onject after the main one was destroyed, optional. Transforms from original object will be applied to it
 
 ---Register new tool with default functionality and tags
 ---@param tool_id Identifier Tool Identifier
