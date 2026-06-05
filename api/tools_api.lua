@@ -3,12 +3,16 @@
 ---@class Tools Tools API class, provides different dunctions for making default tools and realise their behaviour
 Tools = {}
 
+---@class WeightedItemStackEntry
+---@field stack ItemStack
+---@field weight number
+
 ---@class GameObjectToolData Drop definition used by Tools API
 ---@field max_hits number|fun(game_object: GameObject): number Maximum amount of tool hits that object can handle before breaking
 ---@field tool_tag Identifier Tool tag ID that can destroy this object
 ---@field hit_sound? Identifier Hit sound, played on each tool hit
 ---@field break_sound? Identifier Breaking sound, played when onject is broken
----@field drop_item? ItemStack Item that will be dropped on each position
+---@field drop_item? ItemStack|WeightedList<ItemStack> Item that will be dropped on each position
 ---@field drop_position? Vector3|Vector3[]|fun(game_object: GameObject): Vector3[] Drop positions relative to object
 ---@field remained_object? Identifier Remained onject after the main one was destroyed, optional. Transforms from original object will be applied to it
 

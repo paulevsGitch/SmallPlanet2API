@@ -236,7 +236,8 @@ async function main() {
 		"api/terrain_material_api.lua",
 		"api/time_api.lua",
 		"api/tools_api.lua",
-		"api/vector3_api.lua"
+		"api/vector3_api.lua",
+		"api/weighted_list.lua"
 	];
 
 	for (const api of apis) {
