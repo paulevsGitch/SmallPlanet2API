@@ -160,8 +160,8 @@ function Core.get_entities_in_radius(planet_id, position, radius) end
 ---@param callback fun(position: Vector3, hit_object: GameObject)
 function Core.game_object_raycast(planet_id, start_position, end_position, callback) end
 
----Creates damage decal on specified position facing on specified normal
----@param game_object GameObject Parent game object for decal to stay in place. Decal will dissapear together with the object or after 10 seconds.
----@param position Vector3 Decal position
----@param normal Vector3 Decal normal for proper orientation on surface
-function Core.create_damage_decal(game_object, position, normal) end
+---Creates damage effect on object with specified position
+---@param game_object GameObject Parent game object for destruction effect
+---@param position Vector3 Effect position in world space
+---@param normal Vector3 Effect normal for proper orientation on surface
+function Core.create_damage_effect(game_object, position, normal) end
