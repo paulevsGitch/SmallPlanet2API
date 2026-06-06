@@ -10,6 +10,8 @@
 ---|BetweenHeightsTerrainCondition
 ---|AndTerrainCondition
 ---|OrTerrainCondition
+---|BetweenValuesTerrainCondition
+---|HeightAngleRangeCondition
 
 ---@class AboveAngleTerrainCondition
 ---@field type "above_angle"
@@ -50,10 +52,15 @@
 
 ---@class AndTerrainCondition
 ---@field type "and"
----@field inout_a TerrainCondition
----@field inout_b TerrainCondition
+---@field input_a TerrainCondition
+---@field input_b TerrainCondition
 
 ---@class OrTerrainCondition
 ---@field type "or"
----@field inout_a TerrainCondition
----@field inout_b TerrainCondition
+---@field input_a TerrainCondition
+---@field input_b TerrainCondition
+
+---@class HeightAngleRangeCondition
+---@field type "height_angle_range"
+---@field min_value number
+---@field max_value number
