@@ -20,13 +20,9 @@
 ---@field planet Identifier GameEntity planet Identifier
 ---@field position Vector3 GameObject position in meters
 ---@field rotation Vector3 GameObject rotation in radians
+---@field rotation_quaternion Quaternion GameObject rotation as Quaternion
 ---@field scale Vector3 GameObject scale in meters
 GameObject = {}
 
 ---Deletes this GameObject
 function GameObject:delete() end
-
----Rotate vector based on object rotation
----@param vector Vector3
----@return Vector3
-function GameObject:rotate_vector(vector) end
