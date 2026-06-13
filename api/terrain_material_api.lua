@@ -1,10 +1,5 @@
 ---@meta
 
----@class RandomSoundsDefinition Randomized sound definition table
----@field random_pitch? number Random pitch offset, optional. Default is 0.0
----@field random_volume? number Random volume offset in db, optional. Default is 0.0
----@field sounds string[] Array of sound identifiers
-
 ---@class TerrainDecorationDefinition Terrain material decoration definition table
 ---@field model string Model identifier
 ---@field density? number Decoration density, optional. Default is 1.0
@@ -15,4 +10,4 @@
 ---@field color string|{ dark_color: string, bright_color: string, color_mixer: number|FloatFunction } Terrain color, in Hex RGBA format
 ---@field smooth_blending? boolean Smooth blending, will mix material color with neighbours that have smooth blending, optional. Default is false
 ---@field decorations? TerrainDecorationDefinition[] Array of terrain decoration definitions
----@field sounds? {footstep?: RandomSoundsDefinition} Table with sound definitions
+---@field sounds? {footstep?: RandomSoundDefinition} Table with sound definitions

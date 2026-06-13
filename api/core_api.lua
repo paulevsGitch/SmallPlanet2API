@@ -104,23 +104,21 @@ function Core.send_message(message) end
 
 ---Plays sound at specified position
 ---@param planet_id Identifier Planet identifier
----@param sound_id string Souund Identifier
+---@param sound_id Identifier Sound Identifier
 ---@param position Vector3 Sound position
 ---@param volume? number Sound linear volume, optional. Default is 1.0
 ---@param pitch? number Sound pitch scale, optional. Default is 1.0
 function Core.play_sound(planet_id, sound_id, position, volume, pitch) end
 
----@class RandomSoundDefinition
----@field max_pitch? number Maximal sound pitch offset, optinal. Default is 1.0
----@field min_pitch? number Minimal sound pitch offset, optinal. Default is 1.0
----@field max_volume? number Maximal sound linear volume, optinal. Default is 1.0
----@field min_volume? number Minimal sound linear volume, optinal. Default is 1.0
----@field sound_id string Souund Identifier
+---@class RandomSoundDefinition Randomized sound definition table
+---@field random_volume? number Random volume offset in db, optional. Default is 0.0
+---@field random_pitch? number Random pitch offset, optional. Default is 0.0
+---@field sound Identifier|Identifier[] Array of sound Identifiers
 
 ---Plays random sound at specified position
 ---Example: default:good_sound -> default:good_sound_5
 ---@param planet_id Identifier Planet identifier
----@param sound_table RandomSoundDefinition[] Sound array
+---@param sound_table RandomSoundDefinition Sound array
 ---@param position Vector3 Sound position
 function Core.play_random_sound(planet_id, sound_table, position) end
 
