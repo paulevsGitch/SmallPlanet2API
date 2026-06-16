@@ -4,14 +4,6 @@
 ---@class Time
 Time = {}
 
----Get time in milliseconds since the game start. Each world has its own starting time
----@return integer
-function Time.get_milliseconds() end
-
----Get time in microseconds since the game start. Each world has its own starting time
----@return integer
-function Time.get_microseconds() end
-
 ---Get time in seconds since the game start. Each world has its own starting time
 ---@return number
 function Time.get_seconds() end
