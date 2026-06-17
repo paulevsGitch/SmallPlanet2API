@@ -163,3 +163,6 @@ function Core.game_object_raycast(planet_id, start_position, end_position, callb
 ---@param position Vector3 Effect position in world space
 ---@param normal Vector3 Effect normal for proper orientation on surface
 function Core.create_damage_effect(game_object, position, normal) end
+
+---Get current world (save file) seed. It is identical for all planets
+function Core.get_world_seed() end
