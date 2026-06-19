@@ -12,3 +12,7 @@ function table.get_nested_field(tbl, ...) end
 ---@param skip_existing_keys? boolean If true will not override existing keys in table_a, optional. Default is false
 ---@return table
 function table.merge_into(table_a, table_b, skip_existing_keys) end
+
+---Shuffle array content
+---@param tbl any[] Array to shuffle
+function table.shuffle(tbl) end

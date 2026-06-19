@@ -230,6 +230,7 @@ async function main() {
 		"api/math_api.lua",
 		"api/player_api.lua",
 		"api/registry_api.lua",
+		"api/sequence_random.lua",
 		"api/string_api.lua",
 		"api/table_api.lua",
 		"api/terrain_condition_api.lua",
