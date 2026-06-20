@@ -40,7 +40,24 @@ function math.create_line(start_position, offset, point_count) end
 
 ---Create a Fibonacci sphere with specified amount of points
 ---@param point_count integer Sphere points count
----@param center_position? Vector3 Sphere center position, optional. Default is [0.0, 0.0, 0.0]
 ---@param radius? number Sphere radius, optional. Default is 1.0
+---@param center_position? Vector3 Sphere center position, optional. Default is [0.0, 0.0, 0.0]
 ---@return Vector3[]
-function math.fibonacci_sphere(point_count, center_position, radius) end
+function math.fibonacci_sphere(point_count, radius, center_position) end
+
+---Create a Sunflower Seed Arrangement with specified amount of points.
+---[Wolfram Source](https://demonstrations.wolfram.com/SunflowerSeedArrangements/)
+---@param point_count integer Sunflower points count
+---@param radius? number Sunflower radius parameter, optional. Default is 1.0
+---@param center_position? Vector3 Sunflower center, optional. Default is [0.0, 0.0, 0.0]
+---@param alpha? number Sunflower alpha parameter, detems how many seeds will be offset to the edge, optional. Default is 0.0
+---@return Vector3[]
+function math.sunflower(point_count, radius, center_position, alpha) end
+
+---Create circle with specified amount of points.
+---@param point_count integer Circle points count
+---@param start_angle? number Start angle in radians, optional. Default is 0.0
+---@param radius? number Circle radius parameter, optional. Default is 1.0
+---@param center_position? Vector3 Circle center, optional. Default is [0.0, 0.0, 0.0]
+---@return Vector3[]
+function math.circle_distribution(point_count, start_angle, radius, center_position) end

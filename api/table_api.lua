@@ -13,6 +13,12 @@ function table.get_nested_field(tbl, ...) end
 ---@return table
 function table.merge_into(table_a, table_b, skip_existing_keys) end
 
+---Joins content of the array_a and array_b, returns modified array_a
+---@param array_a any[] Array where values will be merged into
+---@param array_b any[] Array where values will be copied from
+---@return any[]
+function table.join_arrays(array_a, array_b) end
+
 ---Shuffle array content
 ---@param tbl any[] Array to shuffle
 function table.shuffle(tbl) end
