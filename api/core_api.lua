@@ -108,7 +108,8 @@ function Core.send_message(message) end
 ---@param position Vector3 Sound position
 ---@param volume? number Sound linear volume, optional. Default is 1.0
 ---@param pitch? number Sound pitch scale, optional. Default is 1.0
-function Core.play_sound(planet_id, sound_id, position, volume, pitch) end
+---@param max_distance? number Maximum distance for sound to be heared in meters, optional. Default is 5.0
+function Core.play_sound(planet_id, sound_id, position, volume, pitch, max_distance) end
 
 ---@class RandomSoundDefinition Randomized sound definition table
 ---@field random_volume? number Random volume offset in db, optional. Default is 0.0
@@ -120,7 +121,8 @@ function Core.play_sound(planet_id, sound_id, position, volume, pitch) end
 ---@param planet_id Identifier Planet identifier
 ---@param sound_table RandomSoundDefinition Sound array
 ---@param position Vector3 Sound position
-function Core.play_random_sound(planet_id, sound_table, position) end
+---@param max_distance? number Maximum distance for sound to be heared in meters, optional. Default is 5.0
+function Core.play_random_sound(planet_id, sound_table, position, max_distance) end
 
 ---Create item entitity at specified position
 ---@param planet_id Identifier Spawn planet Identifier
