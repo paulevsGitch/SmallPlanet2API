@@ -19,7 +19,7 @@
 ---@class Registry Global access to all game registries
 Registry = {
 	game_model = {
-		---@type GameModelDefinition[] Registered GameModel definitions
+		---@type table<Identifier, GameModelDefinition> Registered GameModel definitions with identifier as a key
 		definitions = {},
 		---Register GameModel with specidied identifier and definition.
 		---@param identifier Identifier GameModel identifier
@@ -28,7 +28,7 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	terrain_material = {
-		---@type TerrainMaterialDefinition[] Registered TerrainMaterial definitions with identifier as a key
+		---@type table<Identifier, TerrainMaterialDefinition> Registered TerrainMaterial definitions with identifier as a key
 		definitions = {},
 		---Register TerrainMaterial with specidied identifier and definition.
 		---@param identifier Identifier TerrainMaterial identifier
@@ -37,7 +37,7 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	game_object = {
-		---@type GameObjectDefinition[] Registered GameObject definitions with identifier as a key
+		---@type table<Identifier, GameObjectDefinition> Registered GameObject definitions with identifier as a key
 		definitions = {},
 		---Register GameObjectDefinition with specidied identifier and definition.
 		---@param identifier Identifier GameObjectDefinition identifier
@@ -46,7 +46,7 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	game_item = {
-		---@type GameItemDefinition[] Registered GameItem definitions with identifier as a key
+		---@type table<Identifier, GameItemDefinition> Registered GameItem definitions with identifier as a key
 		definitions = {},
 		---Register GameItemDefinition with specidied identifier and definition.
 		---@param identifier Identifier GameItemDefinition identifier
@@ -55,7 +55,7 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	game_entity = {
-		---@type GameEntityDefinition[] Registered GameEntity definitions with identifier as a key
+		---@type table<Identifier, GameEntityDefinition> Registered GameEntity definitions with identifier as a key
 		definitions = {},
 		---Register GameEntityDefinition with specidied identifier and definition.
 		---@param identifier Identifier GameEntityDefinition identifier
@@ -64,7 +64,7 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	game_biome = {
-		---@type GameBiomeDefinition[] Registered GameBiome definitions with identifier as a key
+		---@type table<Identifier, GameBiomeDefinition> Registered GameBiome definitions with identifier as a key
 		definitions = {},
 		---Register GameBiomeDefinition with specidied identifier and definition.
 		---@param identifier Identifier GameBiomeDefinition identifier
@@ -73,7 +73,7 @@ Registry = {
 		register = function (identifier, def_table, override_object) end
 	},
 	crafting_recipe = {
-		---@type CraftingRecipeDefinition[] Registered CraftingRecipe definitions with identifier as a key
+		---@type table<Identifier, CraftingRecipeDefinition> Registered CraftingRecipe definitions with identifier as a key
 		definitions = {},
 		---Register CraftingRecipeDefinition with specidied identifier and definition.
 		---@param identifier Identifier CraftingRecipeDefinition identifier

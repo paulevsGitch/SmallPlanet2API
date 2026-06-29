@@ -5,6 +5,7 @@
 ---@field position Vector3 Player position
 ---@field eye_position Vector3 Position from player eyes perspective (player camera position), readonly
 ---@field view_direction Vector3 Player view direction, readonly
+---@field rotation Vector3 Player rotation, readonly
 Player = {}
 
 ---Add specified item to player inventory
